@@ -7,3 +7,10 @@
   width: 100%;
   justify-content: center;
 }
+
+@media (max-width: 600px) {
+  .ContainerHome {
+    padding-inline: 10px;
+    gap: 12px;
+  }
+}

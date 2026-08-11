@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-between;
   padding: 15px 65px;
-  background-color: rgb(40, 65, 90);
+  background-color: transparent;
   color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgba(204, 204, 204, 0.136);
+  border-bottom: 1px solid rgba(245, 148, 11, 0.426);
   width: 100%;
   /* min-width: 1000px; */
 }
@@ -45,12 +45,17 @@
   margin-bottom: 8px;
 }
 
+.div-btn {
+  display: flex;
+  gap: 20px;
+}
+
 .btn-add {
   color: rgb(255, 255, 255);
   background-color: rgba(204, 204, 204, 0.136);
   padding: 4px;
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid rgb(245, 148, 11);
   font-size: 12px;
   width: 80px;
   box-shadow: 3px 3px 0 black;
@@ -63,4 +68,39 @@
 .btn-add:active {
   box-shadow: 0 2px 0 black;
   transform: translateY(3px);
+}
+
+@media (max-width: 900px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .criar {
+    width: 100%;
+    text-align: left;
+  }
+
+  .div-btn {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn-add {
+    flex: 1;
+    width: auto;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    width: 45px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
 }

@@ -1,0 +1,48 @@
+footer {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #008cff0a;
+  border-top: 1px solid rgba(245, 148, 11, 0.426);
+}
+
+.div-footer {
+  /* background-color: #ff9100; */
+  position: relative;
+  padding: 12px 55px;
+}
+
+.footer-title {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer-link {
+  color: #fff;
+}
+
+.footer-engrenagem {
+  margin-bottom: 12px;
+  border-radius: 50%;
+  width: 40px;
+  color: rgb(245, 148, 11);
+  position: absolute;
+  left: 2px;
+  top: 3px;
+}
+
+.footer-engrenagem:hover {
+  transform: rotate(360deg);
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
