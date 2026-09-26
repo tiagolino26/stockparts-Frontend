@@ -1,9 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import IconLessThan from "../assets/icon/less-than.png";
 import "./HeaderEquipamentos.css";
 
 function HeaderEquipamentos({ equipamento, onAdd, onEdit, onDelete }) {
   const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  function handleLogout() {
+    logout();
+    navigate("/login");
+  }
 
   return (
     <>
@@ -36,6 +43,12 @@ function HeaderEquipamentos({ equipamento, onAdd, onEdit, onDelete }) {
           <button className="equipament-action" onClick={onDelete}>
             {" "}
             Excluir Peça
+          </button>
+          <button
+            className="btn-equip-sair"
+            onClick={handleLogout}
+          >
+            Sair
           </button>
         </div>
       </header>

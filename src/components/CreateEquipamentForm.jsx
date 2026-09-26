@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_URL } from "../config/api";
+import { authFetch } from "../config/api";
 
 import "./CreateEquipamentForm.css";
 
@@ -52,13 +52,11 @@ function CreateEquipamentForm({
     setEnviando(true);
     setErro("");
 
-    const url = equipamento
-      ? `${API_URL}/equip/${equipamento.id}`
-      : `${API_URL}/equip/create`;
+    const url = equipamento ? `/equip/${equipamento.id}` : `/equip/create`;
     const method = equipamento ? "PUT" : "POST";
 
     try {
-      const response = await fetch(url, {
+      const response = await authFetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

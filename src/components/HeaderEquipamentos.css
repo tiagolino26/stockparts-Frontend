@@ -3,8 +3,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: #008cff;
-  padding: 12px 25px;
+  padding: 15px 100px 15px 0;  
   font-size: "Poppins";
+  position: relative;
 }
 
 .cabecalho-equipamentos-maquina {
@@ -70,6 +71,8 @@
   border-left: 1px solid #ccc;
   padding: 1px 0 0 15px;
   line-height: 18px;
+  /* background-color: #ff5c5c; */
+  width: 500px;
 }
 
 .description-equipamentos h3 {
@@ -123,6 +126,23 @@
   font-size: 12px;
 }
 
+.btn-equip-sair {
+  border: 1px solid rgb(245, 148, 11);
+  width: 45px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;  
+}
+
+.btn-equip-sair:hover {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(245, 148, 11);
+}
+
 @media (max-width: 900px) {
   .cabecalho-equipamentos {
     flex-direction: column;
@@ -141,6 +161,7 @@
     border-left: none;
     border-top: 1px solid #ccc;
     padding: 10px 0 0 0;
+    width: 360px;
   }
 
   .equipament-actions-container {

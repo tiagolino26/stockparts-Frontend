@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ContainerHome from "../components/ContainerHome";
 import Footer from "../components/Footer";
 import CreateEquipamentForm from "../components/CreateEquipamentForm";
-import { API_URL } from "../config/api";
+import { authFetch } from "../config/api";
 
 import "./HomePage.css";
 
@@ -17,7 +17,7 @@ function HomePage() {
   useEffect(() => {
     async function buscarEquipamentos() {
       try {
-        const response = await fetch(`${API_URL}/equip/getAllEquip`);
+        const response = await authFetch("/equip/getAllEquip");
         if (!response.ok) throw new Error("Erro ao buscar equipamentos");
         setEquipamentos(await response.json());
       } catch (error) {
@@ -50,10 +50,9 @@ function HomePage() {
       return;
 
     try {
-      const response = await fetch(
-        `${API_URL}/equip/${selectedEquipamento.id}`,
-        { method: "DELETE" },
-      );
+      const response = await authFetch(`/equip/${selectedEquipamento.id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) throw new Error("Erro ao excluir equipamento.");
       setSelectedId(null);
       setRefreshKey((k) => k + 1);

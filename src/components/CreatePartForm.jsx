@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_URL } from "../config/api";
+import { authFetch } from "../config/api";
 
 import "./CreatePartForm.css";
 
@@ -59,13 +59,11 @@ function CreatePartForm({
     setEnviando(true);
     setErro("");
 
-    const url = peca
-      ? `${API_URL}/equip/pecas/${peca.id}`
-      : `${API_URL}/equip/pecas`;
+    const url = peca ? `/equip/pecas/${peca.id}` : `/equip/pecas`;
     const method = peca ? "PUT" : "POST";
 
     try {
-      const response = await fetch(url, {
+      const response = await authFetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
